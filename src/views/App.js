@@ -1,6 +1,6 @@
 import Body from './Body';
-import Footer from './Footer';
-import Header from './Header';
+import Footer from './shared/Footer';
+import Header from './shared/Header';
 
 function App() {
   return (
