@@ -29,22 +29,27 @@ class Clientes extends Component {
                   <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" width="200" height="165" alt="Bootstrap" className="d-block mx-auto mb-3"></img>
                   <h1 className="mb-3 fw-semibold lh-1">Lista de clientes - {this.state.clientes.length}</h1>
                   <table className="table">
-                    <tr>
-                      <th>Nome</th>
-                      <th>Telefone</th>
-                      <th>Endereço</th>
-                      <th></th>
-                    </tr>
-                  
-                    {this.state.clientes.map(cliente => (
+                    <thead>
                       <tr>
-                        <td>{cliente.nome}</td>
-                        <td>{cliente.telefone}</td>
-                        <td>{cliente.endereco}</td>
-                        <td><Link to={`/cliente/${cliente.id}`}>Editar</Link></td>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th></th>
                       </tr>
-                    ))}
+                    </thead>
+                    <tbody>
+                      {this.state.clientes.map((cliente, index) => (
+                        <tr key={index}>
+                          <td>{cliente.nome}</td>
+                          <td>{cliente.telefone}</td>
+                          <td>{cliente.endereco}</td>
+                          <td><Link to={`/cliente/${cliente.id}`}>Editar</Link></td>
+                        </tr>
+                      ))}
+                    </tbody>
                   </table>
+                  <Link className="btn btn-primary" to={`/cliente/novo`}>Novo</Link>
+                  <p style={{marginTop: "30px"}} className="text-muted mb-0">Versão v0.0.1</p>
                 </div>
               </div>
             </div>

@@ -14,6 +14,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App/>} />
       <Route path="/clientes" element={<Clientes/>} />
+      <Route path="/cliente/novo" element={<ClienteMostrar/>} />
       <Route path="/cliente/:id" element={<ClienteMostrar/>} />
       <Route path="*" element={<Pagina404/>} />
     </Routes>
