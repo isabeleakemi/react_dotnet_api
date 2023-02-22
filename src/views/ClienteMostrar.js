@@ -25,21 +25,21 @@ class ClienteMostrar extends Component {
   }
 
   salvar(cliente){
-    debugger
     if(cliente && cliente.id && cliente.id > 0){
       axios.put(`https://localhost:44367/clientes/${cliente.id}`, cliente).then(response => {
-        //window.location.href = "/clientes"
-        this.props.history.push("/clientes")
+        window.location.href = "/clientes"
+        //this.props.history.push("/clientes")
       })
     }
     else{
-      axios.post(`https://localhost:44367/clientes`, cliente).then(response => {
-        this.props.history.push("/clientes")
+      axios.post(`https://localhost:44367/clientes/criar`, cliente).then(response => {
+        window.location.href = "/clientes"
+        //this.props.history.push("/clientes")
       })
     }
   }
 
-  salvar2 = (cliente) => {
+  salvar2 = () => {
     if(this.state.cliente.id > 0){
       axios.put(`https://localhost:44367/clientes/${this.state.cliente.id}`, this.state.cliente).then(response => {
         //window.location.href = "/clientes"
@@ -47,7 +47,7 @@ class ClienteMostrar extends Component {
       })
     }
     else{
-      axios.post(`https://localhost:44367/clientes`, this.state.cliente).then(response => {
+      axios.post(`https://localhost:44367/clientes/criar`, this.state.cliente).then(response => {
         this.props.history.push("/clientes")
       })
     }
